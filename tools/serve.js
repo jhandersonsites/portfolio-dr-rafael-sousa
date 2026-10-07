@@ -1,0 +1,2 @@
+const h=require('http'),f=require('fs'),p=require('path');const root=p.join(__dirname,'..','site');
+h.createServer((q,s)=>{const u=p.join(root,decodeURIComponent(q.url.split('?')[0]).replace(/^\/$/,'/index.html'));f.readFile(u,(e,d)=>{if(e){s.writeHead(404);return s.end()}s.writeHead(200,{'Content-Type':u.endsWith('.html')?'text/html; charset=utf-8':'application/octet-stream'});s.end(d)})}).listen(8765);

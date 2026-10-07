@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Rafael Sousa · Dentista em Vitória ES · Lentes de contato dental e facetas</title>
+<meta name="description" content="Dentista em Santa Lúcia, Vitória ES: lentes de contato dental, facetas e clareamento com o Dr. Rafael Sousa, cirurgião-dentista. Agende uma avaliação.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314232B'/%3E%3Cpath d='M12 24 Q32 50 52 24' fill='none' stroke='%23FAF8F5' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fundo:#FAF8F5;
+  --tinta:#14232B;
+  --marca:#1F6F78;
+  --areia:#EFE8DE;
+  --pendente:#8A4F16;
+  --pendente-claro:#E3B07A; /* só para [PENDENTE] sobre fundo escuro */
+  --cinza:#5A666B;
+  --cinza-claro:#B9C4C8;
+  --raio:14px;
+  --sombra:0 1px 2px rgba(20,35,43,.06), 0 8px 24px -8px rgba(20,35,43,.14);
+  --sombra-alta:0 2px 4px rgba(20,35,43,.07), 0 16px 32px -8px rgba(20,35,43,.2);
+  --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fundo);color:var(--tinta);font:400 17px/1.6 var(--sans);overflow-x:hidden;padding-bottom:84px}
+img,svg{max-width:100%}
+h1,h2,h3,p,ul,ol{margin:0}
+a{color:var(--marca)}
+:focus-visible{outline:3px solid var(--marca);outline-offset:3px;border-radius:6px}
+.escuro :focus-visible,.hero :focus-visible{outline-color:var(--fundo)}
+.hero .hero-card :focus-visible,.escuro .card-claro :focus-visible{outline-color:var(--marca)}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+p{max-width:62ch}
+
+/* [PENDENTE] */
+.pend{color:var(--pendente);font-size:16px;font-weight:500;line-height:1.5}
+.pend::before{content:"\2022\00a0"}
+.escuro .pend{color:var(--pendente-claro)}
+.escuro .card-claro .pend{color:var(--pendente)}
+.rot{color:var(--cinza);font-weight:500}
+.escuro .rot{color:var(--cinza-claro)}
+.escuro .card-claro .rot{color:var(--cinza)}
+
+/* faixa de rascunho */
+.rascunho{background:var(--tinta);color:var(--fundo);text-align:center;font-size:17px;font-weight:500;padding:4px 16px;line-height:1.4}
+
+/* topo */
+.topo{position:sticky;top:0;z-index:20;background:rgba(250,248,245,.97);box-shadow:0 1px 0 rgba(20,35,43,.07)}
+.topo-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:10px}
+.ident{display:flex;align-items:center;gap:12px;min-width:0}
+.mono{flex:none;display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:var(--marca);color:#fff;font:700 17px/1 var(--sans);letter-spacing:.02em}
+.id{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.nome{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.1;color:var(--tinta);text-decoration:none}
+.id .arco-nome{width:64px;height:10px;color:var(--marca);margin:1px 0 3px}
+.cro{font-size:17px;line-height:1.35;color:var(--tinta)}
+.menu{display:none}
+.menu ul{display:flex;gap:4px;list-style:none;padding:0;margin:0}
+.menu a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:var(--tinta);text-decoration:none;font-weight:500;border-radius:10px}
+.menu a:hover{color:var(--marca)}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:var(--raio);font:600 17px/1.2 var(--sans);text-decoration:none;text-align:center;background:var(--marca);color:#fff;transition:box-shadow .2s, transform .2s}
+.btn-claro{background:var(--fundo);color:var(--tinta)}
+.btn-contorno{background:transparent;color:var(--fundo);box-shadow:inset 0 0 0 1.5px rgba(250,248,245,.7)}
+.btn-grande{min-height:56px;padding:14px 28px}
+.btn.btn-top{display:none}
+.btn.flutuante{position:fixed;right:16px;bottom:16px;z-index:30;box-shadow:var(--sombra-alta);min-height:52px;padding:12px 22px}
+.zap{width:22px;height:22px;flex:none}
+
+/* arco */
+.arco{display:block;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round}
+.sep{display:flex;align-items:center;gap:16px;color:var(--marca);padding:0 0 40px}
+.sep::before,.sep::after{content:"";flex:1;height:1px;background:currentColor;opacity:.3}
+.sep svg{width:44px;height:14px;flex:none}
+
+/* seções */
+section{padding:72px 0}
+.areia{background:var(--areia)}
+.escuro{background:var(--tinta);color:var(--fundo)}
+.eyebrow{display:flex;align-items:center;gap:14px;font-size:17px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--marca);margin-bottom:14px}
+.eyebrow::before{content:"";flex:none;width:44px;height:2px;background:currentColor}
+.escuro .eyebrow,.hero .eyebrow{color:var(--cinza-claro)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,7vw,56px);line-height:1.08}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,5vw,40px);line-height:1.15;margin-bottom:12px}
+h3{font:600 19px/1.3 var(--sans);margin-bottom:6px}
+.intro{margin-bottom:32px;color:var(--cinza)}
+.escuro .intro{color:var(--cinza-claro)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(70% 90% at 88% 8%, rgba(31,111,120,.3), transparent 62%), var(--tinta);color:var(--fundo);min-height:70vh;min-height:70svh;display:flex;align-items:center;padding:56px 0 104px}
+.hero .marca-dagua{position:absolute;right:-12%;bottom:-6%;width:min(130vw,900px);height:auto;color:var(--fundo);opacity:.1;pointer-events:none}
+.hero .wrap{position:relative}
+.hero-grid{display:grid;gap:40px;align-items:center}
+.hero p.apoio{margin:20px 0 32px;font-size:19px;color:var(--fundo)}
+.hero .botoes{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.hero-card{display:none;background:var(--fundo);color:var(--tinta);border-radius:var(--raio);box-shadow:var(--sombra-alta);padding:28px}
+.card-tit{font:600 19px/1.3 var(--sans);margin-bottom:16px}
+.dado{display:grid;gap:2px;margin-bottom:16px}
+.dado:last-child{margin-bottom:0}
+.dado a{font-weight:600}
+.tel{font-variant-numeric:tabular-nums;font-size:19px;font-weight:600;display:inline-flex;align-items:center;min-height:44px}
+
+/* reputação: faixa flutuante sobre o fim do hero (dado conferido no Google) */
+.faixa{padding:0;background:var(--fundo)}
+.faixa-card{position:relative;z-index:2;margin-top:-44px;background:var(--fundo);border-radius:var(--raio);box-shadow:var(--sombra-alta);padding:24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px}
+.nota-bloco{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.nota{font:700 clamp(34px,5vw,44px)/1 var(--sans);font-variant-numeric:tabular-nums;color:var(--tinta)}
+.estrelas{width:120px;height:22px;display:block}
+.nota-txt{display:grid;gap:2px}
+.nota-txt a{font-weight:600;display:inline-flex;align-items:center;min-height:44px}
+
+/* cards */
+.cards{display:grid;gap:20px;grid-template-columns:1fr}
+.card{background:var(--fundo);border-radius:var(--raio);box-shadow:var(--sombra);padding:28px 24px;transition:box-shadow .25s, transform .25s;display:flex;flex-direction:column}
+.card svg.ico{width:44px;height:44px;color:var(--marca);fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px}
+.card p{color:var(--tinta);flex:1}
+.link-card{display:inline-flex;align-items:center;min-height:44px;margin-top:12px;font-weight:600;text-decoration:none}
+.link-card:hover{text-decoration:underline}
+.como{margin-top:28px}
+
+/* passos */
+.passos{list-style:none;padding:0;display:grid;gap:20px;grid-template-columns:1fr;counter-reset:p}
+.passos li{counter-increment:p;background:var(--fundo);border-radius:var(--raio);box-shadow:var(--sombra);padding:24px;transition:box-shadow .25s, transform .25s}
+.passos li::before{content:counter(p);display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--marca);color:#fff;font-weight:700;margin-bottom:12px;font-variant-numeric:tabular-nums}
+
+/* fotos */
+.fotos{display:grid;gap:20px;grid-template-columns:1fr}
+.fotos figure{margin:0;width:100%;max-width:380px;margin-inline:auto}
+.fotos>.moldura{max-width:380px;margin-inline:auto;width:100%}
+.moldura{position:relative;overflow:hidden;border-radius:var(--raio);box-shadow:var(--sombra);aspect-ratio:4/3;background:var(--areia);display:flex;align-items:center;justify-content:center;padding:20px;text-align:center}
+.areia .moldura{background:var(--fundo)}
+/* QUANDO HOUVER FOTO: definir aspect-ratio no HTML (style="aspect-ratio:L/A") com a proporção real do arquivo */
+.moldura img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.moldura.tem-foto::after{content:"";position:absolute;inset:0;background:rgba(20,35,43,.07);mix-blend-mode:multiply;pointer-events:none}
+.moldura.tem-foto img{filter:saturate(.92) contrast(1.04)}
+.legenda-foto{font-size:17px;color:var(--cinza);margin-top:8px}
+
+/* sobre */
+.sobre-grid{display:grid;gap:32px;align-items:start}
+.sobre-grid .moldura{aspect-ratio:4/5;max-width:420px}
+
+/* avaliações (escuro) */
+.slots{display:grid;gap:20px;grid-template-columns:1fr}
+.slot{background:rgba(250,248,245,.07);border-radius:var(--raio);box-shadow:0 1px 2px rgba(0,0,0,.2), 0 8px 24px -8px rgba(0,0,0,.35);padding:28px 24px;transition:box-shadow .25s, transform .25s}
+.slot .aspas{font-family:var(--serif);font-weight:600;font-size:48px;line-height:.6;color:var(--cinza-claro);display:block;margin-bottom:12px}
+
+/* faq */
+.faq{display:grid;gap:12px;max-width:760px;margin-top:28px}
+details{background:var(--fundo);border-radius:var(--raio);box-shadow:var(--sombra)}
+summary{cursor:pointer;list-style:none;min-height:48px;padding:14px 20px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;line-height:1;color:var(--marca);flex:none}
+details[open] summary::after{content:"\2212"}
+details .resp{padding:0 20px 18px}
+
+/* contato */
+.contato-grid{display:grid;gap:32px}
+.contato .botoes{margin-top:8px}
+.contato-lista{display:grid;gap:20px;margin-top:28px}
+.contato-lista .item{display:flex;gap:14px;align-items:flex-start}
+.contato-lista .ico-c{flex:none;width:24px;height:24px;margin-top:3px;color:var(--cinza-claro);fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.contato-lista .txt{display:grid;gap:2px}
+.contato-lista a{color:var(--fundo)}
+.card-claro{background:var(--fundo);color:var(--tinta);border-radius:var(--raio);box-shadow:0 2px 4px rgba(0,0,0,.2), 0 16px 32px -8px rgba(0,0,0,.4);padding:28px}
+.card-claro p{max-width:none}
+
+/* rodapé */
+footer{background:var(--tinta);color:var(--fundo);padding:40px 0 48px;border-top:1px solid rgba(250,248,245,.15)}
+footer .nome{color:var(--fundo);display:block}
+footer p{color:var(--cinza-claro)}
+footer .cro{color:var(--fundo)}
+
+/* entrada do hero e revelação ao rolar (uma vez, sem loop; só com movimento permitido) */
+@keyframes subir{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes surgir{from{opacity:0}to{opacity:.1}}
+@media (prefers-reduced-motion:no-preference){
+  .hero-grid>div>*{animation:subir .9s cubic-bezier(.2,.7,.2,1) backwards}
+  .hero-grid>div>*:nth-child(2){animation-delay:.12s}
+  .hero-grid>div>*:nth-child(3){animation-delay:.24s}
+  .hero-grid>div>*:nth-child(4){animation-delay:.36s}
+  .hero-card{animation:subir 1s cubic-bezier(.2,.7,.2,1) .45s backwards}
+  .hero .marca-dagua{animation:surgir 1.8s ease-out .2s backwards}
+  .faixa-card{animation:subir .9s cubic-bezier(.2,.7,.2,1) .6s backwards}
+  @supports (animation-timeline:view()){
+    section:not(.hero) h2,.cards>.card,.passos>li,.slots>.slot,.fotos figure,.sobre-grid>*,.contato-grid>*{
+      animation:subir linear backwards;animation-timeline:view();animation-range:entry 0% entry 40%}
+  }
+}
+/* interações (só com movimento permitido e ponteiro com hover) */
+@media (prefers-reduced-motion:no-preference) and (hover:hover){
+  .card:hover,.passos li:hover,.slot:hover{transform:translateY(-2px)}
+  .card:hover,.passos li:hover{box-shadow:var(--sombra-alta)}
+  .slot:hover{box-shadow:0 2px 4px rgba(0,0,0,.25), 0 16px 32px -8px rgba(0,0,0,.5)}
+  .moldura:hover img{transform:scale(1.03)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+
+@media (min-width:600px){
+  .hero .botoes{flex-direction:row;align-items:center;flex-wrap:wrap}
+  .cards,.passos,.slots{grid-template-columns:repeat(3,1fr)}
+  .fotos{display:flex;flex-wrap:wrap;align-items:flex-start}
+  .fotos figure{flex:var(--g) 1 0;min-width:0;max-width:none;margin:0}
+  .fotos>.moldura{flex:1 1 100%;max-width:none;margin:0}
+}
+@media (min-width:860px){
+  body{padding-bottom:0}
+  section{padding:100px 0}
+  .faixa-card{padding:28px 36px}
+  .menu{display:block}
+  .btn.btn-top{display:inline-flex}
+  .btn.flutuante{display:none}
+  .hero-grid{grid-template-columns:1.4fr 1fr;gap:64px}
+  .hero-card{display:block}
+  .sobre-grid{grid-template-columns:.8fr 1.2fr;gap:56px}
+  .contato-grid{grid-template-columns:1.2fr 1fr;gap:64px;align-items:start}
+  .hero .marca-dagua{right:-4%;width:min(80vw,900px)}
+}
+</style>
+</head>
+<body>
+<!-- Símbolo do arco: um desenho, usado em 3 lugares (marca d'água, separador, sublinhado do nome) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="arco" viewBox="0 0 60 20"><path pathLength="1" d="M2 3 Q30 27 58 3"/></symbol>
+  <symbol id="zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.51A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 14.96l-.3-.19-3.1.9.92-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 3.9c-.2 0-.5.07-.76.35-.26.28-1 .98-1 2.4s1.03 2.78 1.17 2.97c.14.2 2 3.17 4.9 4.32 2.42.95 2.9.76 3.43.71.52-.05 1.7-.69 1.94-1.36.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.33-.29-.14-1.7-.84-1.96-.93-.26-.1-.46-.14-.65.14-.19.29-.74.93-.9 1.12-.17.2-.33.22-.62.07-.29-.14-1.2-.44-2.29-1.41-.85-.76-1.42-1.69-1.59-1.98-.17-.29-.02-.44.12-.58.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.2.05-.36-.02-.5-.07-.15-.65-1.57-.89-2.15-.23-.56-.47-.49-.65-.5h-.55Z"/></symbol>
+</svg>
+
+<!-- REMOVER NA ENTREGA FINAL -->
+<div class="rascunho" role="note">Rascunho de proposta · não publicado</div>
+<!-- /REMOVER NA ENTREGA FINAL -->
+
+<header class="topo">
+  <div class="wrap topo-in">
+    <div class="ident">
+      <span class="mono" aria-hidden="true">RS</span>
+      <div class="id">
+        <a class="nome" href="#inicio">Dr. Rafael Sousa</a>
+        <svg class="arco arco-nome" viewBox="0 0 60 20" preserveAspectRatio="none" aria-hidden="true"><use href="#arco"/></svg>
+        <span class="cro">Cirurgião-dentista · CRO-ES <span class="pend">[PENDENTE: CRO-ES nº]</span></span>
+      </div>
+    </div>
+    <nav class="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#tratamentos">Tratamentos</a></li>
+        <li><a href="#atendimento">Atendimento</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-top" href="https://wa.me/5527998235943?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer"><svg class="zap" aria-hidden="true"><use href="#zap"/></svg>WhatsApp</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO tipográfico (sem site/img/hero.jpg) -->
+<section class="hero" id="inicio" aria-labelledby="h1">
+  <svg class="arco marca-dagua" viewBox="0 0 60 20" aria-hidden="true"><use href="#arco"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Santa Lúcia · Vitória - ES</p>
+      <h1 id="h1">Lentes de contato dental, facetas e clareamento em Santa Lúcia, Vitória</h1>
+      <p class="apoio">Agende uma avaliação com o Dr. Rafael Sousa, cirurgião-dentista.</p>
+      <div class="botoes">
+        <a class="btn btn-claro btn-grande" href="https://wa.me/5527998235943?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer"><svg class="zap" aria-hidden="true"><use href="#zap"/></svg>Agendar avaliação pelo WhatsApp</a>
+        <a class="btn btn-contorno btn-grande" href="#tratamentos">Ver tratamentos</a>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Consultório">
+      <p class="card-tit">Consultório em Santa Lúcia</p>
+      <div class="dado"><span class="rot">Endereço</span><span>Edifício Contemporâneo Empresarial, R. das Palmeiras, 685, sala 712, Santa Lúcia, Vitória - ES</span></div>
+      <div class="dado"><span class="rot">Telefone</span><a class="tel" href="tel:+5527998235943">(27) 99823-5943</a></div>
+      <div class="dado"><span class="rot">Horário</span><span class="pend">[PENDENTE: horário de atendimento]</span></div>
+    </aside>
+  </div>
+</section>
+
+<!-- REPUTAÇÃO: "Conferido por mim no Google" está vazio, então nota e número NÃO aparecem -->
+<section class="faixa" aria-label="Avaliações no Google">
+  <div class="wrap">
+    <div class="faixa-card">
+      <div class="nota-bloco">
+        <span class="nota">5,0</span>
+        <svg class="estrelas" viewBox="0 0 120 22" role="img" aria-label="Nota 5,0 de 5">
+          <defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="0"><stop offset="100%" stop-color="#1F6F78"/><stop offset="100%" stop-color="#D9CFC0"/></linearGradient>
+          <path id="e" d="M11 1.5l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L11 15.8 5.3 19.0l1.2-6.4L1.8 8.2l6.4-.8z"/></defs>
+          <g fill="url(#g)"><use href="#e"/><use href="#e" x="24"/><use href="#e" x="48"/><use href="#e" x="72"/><use href="#e" x="96"/></g>
+        </svg>
+        <div class="nota-txt"><span>129 avaliações no Google</span></div>
+      </div>
+      <a class="btn btn-claro" style="box-shadow:inset 0 0 0 1.5px var(--marca);color:var(--marca)" href="https://maps.google.com/?cid=8277995012480342649" target="_blank" rel="noopener noreferrer">Ver perfil no Google</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRATAMENTOS -->
+<section id="tratamentos" aria-labelledby="h-trat">
+  <div class="wrap">
+    <div class="sep" aria-hidden="true"><svg class="arco" viewBox="0 0 60 20" preserveAspectRatio="none"><use href="#arco"/></svg></div>
+    <p class="eyebrow">Lentes · Facetas · Clareamento</p>
+    <h2 id="h-trat">Tratamentos</h2>
+    <p class="intro">Três procedimentos para quem quer cuidar da aparência do sorriso.</p>
+    <div class="cards">
+      <article class="card">
+        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 14c0-3 3-6 8-6h16c5 0 8 3 8 6 0 10-4 24-16 26C12 38 8 24 8 14Z"/><path d="M16 17c4 2 12 2 16 0"/></svg>
+        <h3>Lentes de contato dental</h3>
+        <p>Lâminas muito finas, em geral de cerâmica, aplicadas sobre a superfície frontal do dente.</p>
+        <a class="link-card" href="https://wa.me/5527998235943?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">Perguntar no WhatsApp →</a>
+      </article>
+      <article class="card">
+        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="6" width="24" height="36" rx="9"/><path d="M18 14v14"/><path d="M22 14v6"/></svg>
+        <h3>Facetas em porcelana</h3>
+        <p>Lâminas de porcelana coladas na face visível do dente. A indicação é definida na avaliação.</p>
+        <a class="link-card" href="https://wa.me/5527998235943?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">Perguntar no WhatsApp →</a>
+      </article>
+      <article class="card">
+        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6v10M24 32v10M6 24h10M32 24h10"/><path d="M12 12l6 6M30 30l6 6M36 12l-6 6M18 30l-6 6"/></svg>
+        <h3>Clareamento dental</h3>
+        <p>Procedimento que clareia a cor natural dos dentes com agentes clareadores, com indicação do dentista.</p>
+        <a class="link-card" href="https://wa.me/5527998235943?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">Perguntar no WhatsApp →</a>
+      </article>
+    </div>
+    <p class="como"><span class="rot">Como o Dr. Rafael trabalha:</span> <span class="pend">[PENDENTE: técnica, material e nº de consultas]</span></p>
+  </div>
+</section>
+
+<!-- PRIMEIRA AVALIAÇÃO -->
+<section class="areia" id="atendimento" aria-labelledby="h-aval">
+  <div class="wrap">
+    <p class="eyebrow">Atendimento</p>
+    <h2 id="h-aval">Como é a primeira avaliação</h2>
+    <p class="intro">Três passos, do primeiro contato ao plano de tratamento.</p>
+    <ol class="passos">
+      <li><h3>Você chama no WhatsApp</h3><p>Uma mensagem para o consultório, com a pergunta que você tiver.</p></li>
+      <li><h3>Avaliação no consultório</h3><p><span class="pend">[PENDENTE: duração e o que inclui]</span></p></li>
+      <li><h3>Plano de tratamento</h3><p><span class="pend">[PENDENTE: como e quando ele é apresentado]</span></p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CONSULTÓRIO (sem fotos em site/img/) -->
+<section aria-labelledby="h-cons">
+  <div class="wrap">
+    <div class="sep" aria-hidden="true"><svg class="arco" viewBox="0 0 60 20" preserveAspectRatio="none"><use href="#arco"/></svg></div>
+    <p class="eyebrow">Santa Lúcia</p>
+    <h2 id="h-cons">Consultório</h2>
+    <p class="intro">Edifício Contemporâneo Empresarial, sala 712.</p>
+    <div class="fotos">
+      <figure class="foto" style="--g:.75"><div class="moldura tem-foto" style="aspect-ratio:3024/4032"><img src="img/consultorio-1-logo.jpg" alt="Parede em arco iluminada com o letreiro Rafael Sousa na recepção do consultório" loading="lazy" decoding="async"></div><figcaption class="legenda-foto">Foto: Google Maps</figcaption></figure>
+      <figure class="foto" style="--g:.5625"><div class="moldura tem-foto" style="aspect-ratio:2160/3840"><img src="img/consultorio-2-recepcao.jpg" alt="Corredor da recepção do consultório, com painel de madeira e o letreiro iluminado ao fundo" loading="lazy" decoding="async"></div><figcaption class="legenda-foto">Foto: Google Maps</figcaption></figure>
+      <figure class="foto" style="--g:.75"><div class="moldura tem-foto" style="aspect-ratio:3024/4032"><img src="img/consultorio-3-espera.jpg" alt="Sala de espera do consultório, com poltronas marrons, mesas de centro e TV" loading="lazy" decoding="async"></div><figcaption class="legenda-foto">Foto: Google Maps</figcaption></figure>
+    </div>
+    <p style="margin-top:20px"><span class="pend">[PENDENTE: foto da equipe]</span></p>
+    <!-- Foto vinda de fora (Google, Instagram): adicionar <p class="legenda-foto">Foto: Google / Instagram</p> -->
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="areia" id="sobre" aria-labelledby="h-sobre">
+  <div class="wrap sobre-grid">
+    <div class="moldura"><span class="pend">[PENDENTE: foto do Dr. Rafael]</span></div>
+    <div>
+      <p class="eyebrow">Cirurgião-dentista</p>
+      <h2 id="h-sobre">Sobre o Dr. Rafael</h2>
+      <p><span class="pend">[PENDENTE: foto, formação, tempo de atuação, e por que ele atua com estética do sorriso]</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- AVALIAÇÕES (nenhuma colada no brief) -->
+<section class="escuro" aria-labelledby="h-av">
+  <div class="wrap">
+    <p class="eyebrow">Pacientes</p>
+    <h2 id="h-av">Avaliações</h2>
+    <p class="intro">O que pacientes escreveram no Google.</p>
+    <div class="slots">
+      <div class="slot"><span class="aspas" aria-hidden="true">“</span><p><span class="pend">[PENDENTE: avaliação 1, copiada exatamente do Google, com o nome como aparece]</span></p></div>
+      <div class="slot"><span class="aspas" aria-hidden="true">“</span><p><span class="pend">[PENDENTE: avaliação 2, copiada exatamente do Google, com o nome como aparece]</span></p></div>
+      <div class="slot"><span class="aspas" aria-hidden="true">“</span><p><span class="pend">[PENDENTE: avaliação 3, copiada exatamente do Google, com o nome como aparece]</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="areia" aria-labelledby="h-faq">
+  <div class="wrap">
+    <p class="eyebrow">Dúvidas</p>
+    <h2 id="h-faq">Dúvidas frequentes</h2>
+    <div class="faq">
+      <details><summary>Como funciona a primeira avaliação?</summary><div class="resp"><span class="pend">[PENDENTE: resposta do Dr. Rafael]</span></div></details>
+      <details><summary>Qual a diferença entre lentes de contato dental e facetas?</summary><div class="resp"><span class="pend">[PENDENTE: resposta do Dr. Rafael]</span></div></details>
+      <details><summary>Quanto tempo dura o tratamento?</summary><div class="resp"><span class="pend">[PENDENTE: resposta do Dr. Rafael]</span></div></details>
+      <details><summary>Quais as formas de pagamento?</summary><div class="resp"><span class="pend">[PENDENTE: resposta do Dr. Rafael]</span></div></details>
+      <details><summary>Como cuidar depois do tratamento?</summary><div class="resp"><span class="pend">[PENDENTE: resposta do Dr. Rafael]</span></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="escuro contato" id="contato" aria-labelledby="h-cont">
+  <div class="wrap contato-grid">
+    <div>
+      <p class="eyebrow">Agende sua avaliação</p>
+      <h2 id="h-cont">Contato</h2>
+      <p class="intro" style="margin-bottom:24px">Chame no WhatsApp ou visite o consultório em Santa Lúcia.</p>
+      <div class="botoes">
+        <a class="btn btn-claro btn-grande" href="https://wa.me/5527998235943?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer"><svg class="zap" aria-hidden="true"><use href="#zap"/></svg>Agendar avaliação pelo WhatsApp</a>
+      </div>
+      <div class="contato-lista">
+        <div class="item">
+          <svg class="ico-c" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+          <div class="txt"><span class="rot">Telefone</span><a class="tel" href="tel:+5527998235943" style="display:inline-flex;align-items:center;min-height:44px">(27) 99823-5943</a></div>
+        </div>
+        <div class="item">
+          <svg class="ico-c" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <div class="txt"><span class="rot">Endereço</span><span>Edifício Contemporâneo Empresarial, R. das Palmeiras, 685, sala 712, Santa Lúcia, Vitória - ES</span>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Edif%C3%ADcio%20Contempor%C3%A2neo%20Empresarial%2C%20R.%20das%20Palmeiras%2C%20685%2C%20Santa%20L%C3%BAcia%2C%20Vit%C3%B3ria%20-%20ES" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;min-height:44px;font-weight:600">Como chegar</a></div>
+        </div>
+        <div class="item">
+          <svg class="ico-c" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r=".6"/></svg>
+          <div class="txt"><span class="rot">Instagram</span><a href="https://instagram.com/dr.rafaelsousa" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;min-height:44px;font-weight:600">@dr.rafaelsousa</a></div>
+        </div>
+      </div>
+    </div>
+    <aside class="card-claro" aria-label="Primeira avaliação">
+      <p class="card-tit">Primeira avaliação</p>
+      <div class="dado"><span class="rot">O que inclui</span><span class="pend">[PENDENTE: duração e o que inclui]</span></div>
+      <div class="dado"><span class="rot">Horário</span><span class="pend">[PENDENTE: horário de atendimento]</span></div>
+      <div class="dado"><span class="rot">Formas de pagamento</span><span class="pend">[PENDENTE: formas de pagamento]</span></div>
+      <div class="dado"><span class="rot">Mapa</span><span class="pend">[PENDENTE: mapa]</span></div>
+    </aside>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="nome">Dr. Rafael Sousa</span>
+    <p class="cro">Cirurgião-dentista · CRO-ES <span class="pend">[PENDENTE: CRO-ES nº]</span></p>
+    <p>Santa Lúcia · Vitória - ES · 2026</p>
+  </div>
+</footer>
+
+<a class="btn flutuante" href="https://wa.me/5527998235943?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" aria-label="Agendar avaliação pelo WhatsApp"><svg class="zap" aria-hidden="true"><use href="#zap"/></svg>WhatsApp</a>
+</body>
+</html>
