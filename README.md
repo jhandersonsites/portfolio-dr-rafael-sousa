@@ -1,6 +1,6 @@
 # Dr. Rafael Sousa · rascunho de landing page (Pontoweb)
 
-Rascunho de proposta. Não publicado. `noindex, nofollow`. Repositório privado.
+Rascunho de proposta para apresentação ao cliente. `noindex, nofollow`.
 
 - `site/index.html`: página única, sem build e sem JavaScript
 - `site/img/`: fotos do consultório (origem: perfil público no Google Maps; confirmar uso com o profissional)
